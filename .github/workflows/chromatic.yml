@@ -7,6 +7,9 @@ on: push
 # List of jobs
 jobs:
   chromatic-deployment:
+    # Operating System
+    runs-on: ubuntu-latest
+    # Job steps
     steps:
       # 👇 Version 3 of the action
       - uses: actions/checkout@v3
