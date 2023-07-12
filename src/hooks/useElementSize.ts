@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 
-// Hppks
+// Hooks
 import { useEventListener } from "./useEventListener";
 import { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect";
 

@@ -21,8 +21,5 @@ const config: StorybookConfig = {
     }
   ],
   stories: ["../src/**/*.mdx", "../src/**/*.stories.*"]
-  // docs: {
-  //   autodocs: true
-  // }
 };
 export default config;

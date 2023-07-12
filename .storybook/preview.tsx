@@ -29,9 +29,9 @@ const preview: Preview = {
       }
     },
     options: {
-      showPanel: true
-      // storySort: (story1, story2) =>
-      //   (story2.title.match(/\//g) || []).length - (story1.title.match(/\//g) || []).length
+      showPanel: true,
+      storySort: (story1, story2) =>
+        (story2.title.match(/\//g) || []).length - (story1.title.match(/\//g) || []).length
     }
   },
   decorators: [themeProviderDecorators]
