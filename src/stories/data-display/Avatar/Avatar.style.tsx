@@ -1,13 +1,10 @@
 import { Avatar, styled } from "@mui/material";
 
+// Constant
+import { sizes } from "./Avatar.constant";
+
 // Type
 import { AvatarProps } from "./Avatar.type";
-
-export const sizes = {
-  sl: 24,
-  md: 40,
-  lg: 56
-} as const;
 
 export const StyledAvatar = styled(Avatar)<AvatarProps>(({ theme, color, size = "md" }) => ({
   width: sizes[size],

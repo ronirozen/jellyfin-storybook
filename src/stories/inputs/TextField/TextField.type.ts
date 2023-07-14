@@ -3,10 +3,12 @@ import { OutlinedTextFieldProps } from "@mui/material";
 // Type
 import { Color } from "style";
 
+// Constant
+import { sizes } from "./TextField.constant";
+
 const keys = [
   "id",
   "rows",
-  "size",
   "type",
   "name",
   "label",
@@ -38,6 +40,11 @@ export type TextFieldProps = { [K in Keys]?: OutlinedTextFieldProps[K] } & {
    * @default inherit
    */
   color?: Color | "inherit";
+  /**
+   * The size of the component.
+   * @default md
+   */
+  size?: keyof typeof sizes;
   EndAdornment?: JSX.Element | string;
   StartAdornment?: JSX.Element | string;
 };

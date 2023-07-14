@@ -3,10 +3,11 @@ import { PropsWithChildren } from "react";
 
 import { TextField } from "../TextField";
 import { SelectProps } from "./Select.type";
+import { sizes } from "../TextField/TextField.constant";
 
 export const StyledSelect = styled(TextField)<
   Omit<PropsWithChildren<SelectProps>, "options"> & { select: boolean }
->(({ theme, size, color = "primary", outlineColor = color }) => ({
+>(({ theme, size = "md", color = "primary", outlineColor = "primary" }) => ({
   "& fieldset": {
     border: "none"
   },
@@ -14,8 +15,10 @@ export const StyledSelect = styled(TextField)<
   "& select": {
     appearance: "none",
     borderRadius: "0.2em",
-    padding: `${size == "small" ? 6.5 : 14.5}px 14px`,
-    border: `0.16em solid ${theme.palette[color].main}`,
+    padding: `${sizes[size]}px 14px`,
+    border: `0.16em solid ${
+      color === "inherit" ? theme.palette[outlineColor].main : theme.palette[color].main
+    }`,
     ":focus": {
       borderColor: theme.palette[outlineColor].main
     }
@@ -23,7 +26,9 @@ export const StyledSelect = styled(TextField)<
 
   "& .MuiNativeSelect-select": {
     "& option": {
-      backgroundColor: `${theme.palette[color].main} !important`
+      backgroundColor: `${
+        color === "inherit" ? theme.palette.background.paper : theme.palette[color].main
+      } !important`
     }
   }
 }));

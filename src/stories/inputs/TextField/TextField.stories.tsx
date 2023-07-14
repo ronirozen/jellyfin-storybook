@@ -23,11 +23,7 @@ const meta: Meta<typeof TextField> = {
 export default meta;
 type Story = StoryObj<typeof TextField>;
 
-export const Primary: Story = {
-  args: {
-    color: "primary"
-  }
-};
+export const Primary: Story = {};
 
 export const OutlineColor: Story = {
   args: {
@@ -36,22 +32,27 @@ export const OutlineColor: Story = {
   }
 };
 
+export const OutlineColorOnFocus: Story = {
+  args: {
+    color: "primary",
+    outlineColor: "info"
+  }
+};
+
 export const Small: Story = {
   args: {
-    size: "small"
+    size: "sl"
   }
 };
 
 export const fullWidth: Story = {
   args: {
-    size: "small",
     fullWidth: true
   }
 };
 
 export const HelperText: Story = {
   args: {
-    size: "small",
     fullWidth: true,
     helperText: "This name will be used to identify the server and will default to the server's hostname."
   }
@@ -65,7 +66,7 @@ export const Number: Story = {
 
 export const Custom: Story = {
   args: {
-    size: "small",
+    size: "lg",
     color: "success",
     outlineColor: "error"
   }
@@ -80,14 +81,12 @@ export const Placeholder: Story = {
 
 export const WithAdornmentIcon: Story = {
   args: {
-    size: "small",
     StartAdornment: <Search color="text" style={{ width: 30 }} />
   }
 };
 
 export const WithAdornmentText: Story = {
   args: {
-    size: "small",
     EndAdornment: <div style={{ margin: 5 }}>{"text"}</div>
   }
 };

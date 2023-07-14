@@ -50,7 +50,7 @@ export const HorizontalImage: Story = {
       <CardMediaStories.default.component
         {...CardMediaStories.default.args}
         {...CardMediaStories.Background.args}
-        image="src/assets/horizontal.webp"
+        image="assets/horizontal.webp"
       />
     )
   }

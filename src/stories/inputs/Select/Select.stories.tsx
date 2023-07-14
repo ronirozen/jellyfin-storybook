@@ -157,42 +157,42 @@ const meta: Meta<typeof Select> = {
 export default meta;
 type Story = StoryObj<typeof Select>;
 
-export const Primary: Story = {
-  args: {
-    color: "primary"
-  }
-};
+export const Primary: Story = {};
 
 export const OutlineColor: Story = {
   args: {
-    color: "primary",
+    color: "inherit",
+    outlineColor: "info"
+  }
+};
+
+export const OutlineColorOnFocus: Story = {
+  args: {
     outlineColor: "info"
   }
 };
 
 export const Small: Story = {
   args: {
-    size: "small"
+    size: "sl"
   }
 };
 
 export const fullWidth: Story = {
   args: {
-    size: "small",
     fullWidth: true
   }
 };
 
 export const HelperText: Story = {
   args: {
-    size: "small",
     helperText: "Testing how helper text is displayed."
   }
 };
 
 export const Custom: Story = {
   args: {
-    size: "small",
+    size: "lg",
     color: "success",
     outlineColor: "error"
   }

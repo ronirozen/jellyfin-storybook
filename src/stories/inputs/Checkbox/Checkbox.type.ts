@@ -1,11 +1,13 @@
-import { CheckboxProps as CheckboxPropsMui, Palette } from "@mui/material";
+import { CheckboxProps as CheckboxPropsMui } from "@mui/material";
 
 // Type
 import { Color } from "style";
 
+// Constant
+import { sizes } from "./Checkbox.constant";
+
 const keys = [
   "id",
-  "size",
   "color",
   "value",
   "checked",
@@ -26,5 +28,10 @@ export type CheckboxProps = { [K in Keys]?: CheckboxPropsMui[K] } & {
    * @default primary
    */
   color?: Color;
+  /**
+   * The size of the component.
+   * @default md
+   */
+  size?: keyof typeof sizes;
   label?: string;
 };

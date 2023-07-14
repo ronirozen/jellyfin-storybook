@@ -20,13 +20,13 @@ export const Info: Story = {
   }
 };
 
-export const UnderlineHover: Story = {
+export const UnderlineOnHover: Story = {
   args: {
     underline: "hover"
   }
 };
 
-export const WithUnderline: Story = {
+export const WithoutUnderline: Story = {
   args: {
     underline: "none"
   }

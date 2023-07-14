@@ -16,8 +16,8 @@ const config: StorybookConfig = {
   },
   staticDirs: [
     {
-      from: "../assets",
-      to: "/assets"
+      to: "/assets",
+      from: "../assets"
     }
   ],
   stories: ["../src/**/*.mdx", "../src/**/*.stories.*"]

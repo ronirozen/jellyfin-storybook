@@ -1,5 +1,8 @@
 import { Checkbox, FormControlLabel, styled } from "@mui/material";
 
+// Constant
+import { sizes } from "./Checkbox.constant";
+
 // Type
 import { CheckboxProps } from "./Checkbox.type";
 
@@ -14,13 +17,15 @@ export const StyledCheckbox = styled(Checkbox)<CheckboxProps>(({ theme }) => ({
   color: theme.palette.text.primary
 }));
 
-export const StyledIcon = styled("span")<CheckboxProps>(({ theme, color, size }) => ({
+export const StyledIcon = styled("span")<CheckboxProps>(({ theme, color = "primary", size = "md" }) => ({
   top: 3,
   left: 0,
   margin: 0,
   zIndex: 2,
   display: "flex",
   overflow: "hidden",
+  width: sizes[size],
+  height: sizes[size],
   alignItems: "center",
   border: "0.14em solid",
   borderRadius: "0.14em",
@@ -28,17 +33,15 @@ export const StyledIcon = styled("span")<CheckboxProps>(({ theme, color, size })
   "-webkit-align-items": "center",
   "-webkit-justify-content": "center",
   borderColor: theme.palette.text.primary,
-  width: size === "medium" ? "1.45em" : "1.15em",
-  height: size === "medium" ? "1.45em" : "1.15em",
 
   "input:focus ~ &": {
-    borderColor: theme.palette[color || "primary"].main
+    borderColor: theme.palette[color].main
   }
 }));
 
-export const StyledCheckedIcon = styled(StyledIcon)(({ theme, color, size }) => {
+export const StyledCheckedIcon = styled(StyledIcon)(({ theme, color = "primary", size = "md" }) => {
   const borderColor = theme.palette.text.primary;
-  const fillColor = theme.palette[color || "primary"].main;
+  const fillColor = theme.palette[color].main;
 
   return {
     borderColor: fillColor,
@@ -47,14 +50,11 @@ export const StyledCheckedIcon = styled(StyledIcon)(({ theme, color, size }) => 
     "&:before": {
       content: '""',
       display: "block",
-      width: size === "medium" ? "1.45em" : "1.15em",
-      height: size === "medium" ? "1.35em" : "1.05em",
-      backgroundImage:
-        "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath" +
-        " fill-rule='evenodd' clip-rule='evenodd' d='M12 5c-.28 0-.53.11-.71.29L7 9.59l-2.29-2.3a1.003 1.003 0 00-1.42 1.42l3 3c.18.18.43.29" +
-        `.71.29s.53-.11.71-.29l5-5A1.003 1.003 0 0012 5z' fill='${convertStringToEncodeURI(
-          borderColor
-        )}'/%3E%3C/svg%3E\")`
+      width: `calc(${sizes[size]} - 0.40em)`,
+      height: `calc(${sizes[size]} - 0.40em)`,
+      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 24 24' data-testid='CheckIcon'%3E%3Cpath d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z' fill='${convertStringToEncodeURI(
+        borderColor
+      )}'%3E%3C/path%3E%3C/svg%3E")`
     },
 
     "input:focus ~ &": { borderColor }

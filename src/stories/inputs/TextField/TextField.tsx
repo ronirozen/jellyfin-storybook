@@ -14,6 +14,7 @@ import { TextFieldProps } from "./TextField.type";
 import { useElementSize } from "hooks/useElementSize";
 
 export const TextField = ({
+  size,
   label,
   color,
   required,
@@ -42,6 +43,8 @@ export const TextField = ({
           color={outlineColor}
           fullWidth={fullWidth}
           {...props}
+          // @ts-ignore
+          size={size}
         />
         <div>{EndAdornment}</div>
       </StyledTextFieldWithAdornment>

@@ -1,4 +1,4 @@
-import { FC, lazy, useContext } from "react";
+import { FC, useContext } from "react";
 import { linkTo } from "@storybook/addon-links";
 import { useDarkMode } from "storybook-dark-mode";
 import { createElement } from "react-syntax-highlighter";
@@ -28,19 +28,30 @@ export const SourceSkeleton = () => (
 );
 
 const rowRenderer = (row: rendererNode): rendererNode => {
-  const children: rendererNode[] | undefined = row.children?.map(({ properties, ...rest }, i) => {
+  const children: rendererNode[] | undefined = row.children?.map(({ properties, ...rest }) => {
     if (properties?.className.includes("tag") && properties?.className.includes("class-name")) {
+      const isStory = Object.hasOwn(ALL_STORIES, rest?.children?.[0]?.value || "");
       return {
         ...rest,
-        tagName: Object.hasOwn(ALL_STORIES, rest?.children?.[0]?.value || "") ? "button" : "span",
+        tagName: isStory ? "button" : "span",
         properties: {
           ...properties,
           onClick: async () => {
+            if (!isStory) {
+              return;
+            }
+
             const { default: stroy } = await ALL_STORIES[rest?.children?.[0]?.value || ""]();
 
             return linkTo(stroy?.title || "", "docs")();
           },
-          style: { background: "none", border: "none", padding: 0, font: "inherit", cursor: "pointer" }
+          style: {
+            padding: 0,
+            border: "none",
+            font: "inherit",
+            background: "none",
+            cursor: isStory ? "pointer" : "auto"
+          }
         }
       };
     }

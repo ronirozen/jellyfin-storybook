@@ -9,8 +9,7 @@ import { Avatar } from "./Avatar";
 const meta: Meta<typeof Avatar> & { component: FC } = {
   tags: ["autodocs"],
   component: Avatar,
-  title: "Data Display/Avatar",
-  args: { children: <Close /> }
+  title: "Data Display/Avatar"
 };
 
 export default meta;
@@ -24,10 +23,23 @@ export const Secondary: Story = {
   }
 };
 
+export const Icon: Story = {
+  args: {
+    children: <Close />
+  }
+};
+
+export const Image: Story = {
+  args: {
+    alt: "Image",
+    src: "assets/horizontal.webp"
+  }
+};
+
 export const Text: Story = {
   args: {
-    alt: "Avatar",
-    src: "/broken-image.jpg"
+    src: "image",
+    alt: "Image"
   }
 };
 

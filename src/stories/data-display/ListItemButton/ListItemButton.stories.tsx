@@ -26,3 +26,9 @@ type Story = StoryObj<typeof ListItemButton>;
 export const Primary: Story = {
   args: {}
 };
+
+export const Secondary: Story = {
+  args: {
+    color: "secondary"
+  }
+};

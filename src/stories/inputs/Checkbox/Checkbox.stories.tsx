@@ -14,9 +14,14 @@ type Story = StoryObj<typeof Checkbox>;
 
 export const Primary: Story = {};
 
+export const Small: Story = {
+  args: {
+    size: "sl"
+  }
+};
+
 export const Custom: Story = {
   args: {
-    size: "small",
-    color: "success"
+    color: "secondary"
   }
 };

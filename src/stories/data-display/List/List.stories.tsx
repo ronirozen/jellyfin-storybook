@@ -36,6 +36,17 @@ export const Primary: Story = {
   }
 };
 
+export const Divider: Story = {
+  args: {
+    children: (
+      <ListItemStories.default.component
+        {...ListItemStories.default.args}
+        {...ListItemStories.Divider.args}
+      />
+    )
+  }
+};
+
 export const SubText: Story = {
   args: {
     children: (

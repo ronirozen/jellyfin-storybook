@@ -18,12 +18,14 @@ const meta: Meta<typeof CardAction> & { component: FC } = {
   args: {
     children: [
       <IconButtonStories.default.component
+        key="Favorite"
         {...IconButtonStories.default.args}
         {...IconButtonStories.AnotherColorOnHover.args}
       >
         <Favorite />
       </IconButtonStories.default.component>,
       <IconButtonStories.default.component
+        key="MoreVert"
         {...IconButtonStories.default.args}
         {...IconButtonStories.AnotherColorOnHover.args}
       >

@@ -1,4 +1,4 @@
-import type { FC, MouseEvent } from "react";
+import type { FC } from "react";
 import { StoryObj, Meta } from "@storybook/react";
 
 import { Button } from "./Button";
@@ -7,7 +7,7 @@ const meta: Meta<typeof Button> & { component: FC } = {
   component: Button,
   tags: ["autodocs"],
   title: "Navigation/Button",
-  args: { children: "Press me", onClick: (event: MouseEvent) => alert("Hi") }
+  args: { children: "Press me", onClick: () => alert("Hi") }
 };
 
 export default meta;
@@ -35,6 +35,7 @@ export const Loading: Story = {
 
 export const Link: Story = {
   args: {
+    onClick: () => {},
     href: "https://jellyfin.org/"
   }
 };

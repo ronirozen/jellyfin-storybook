@@ -41,6 +41,18 @@ export const Primary: Story = {
   }
 };
 
+export const Divider: Story = {
+  args: {
+    divider: true,
+    children: (
+      <ListItemTextStories.default.component
+        {...ListItemTextStories.default.args}
+        {...ListItemTextStories.Primary.args}
+      />
+    )
+  }
+};
+
 export const SubText: Story = {
   args: {
     children: (
@@ -49,12 +61,14 @@ export const SubText: Story = {
         {...ListItemTextStories.Primary.args}
       >
         <TypographyStories.default.component
+          key="Text"
           {...TypographyStories.default.args}
           {...TypographyStories.Primary.args}
         >
           {"Text"}
         </TypographyStories.default.component>
         <TypographyStories.default.component
+          key="Sub text"
           {...TypographyStories.default.args}
           {...TypographyStories.Secondary.args}
         >
@@ -92,10 +106,12 @@ export const Icon: Story = {
   args: {
     children: [
       <ListItemIconStories.default.component
+        key="ListItemIcon"
         {...ListItemIconStories.default.args}
         {...ListItemIconStories.Primary.args}
       />,
       <ListItemTextStories.default.component
+        key="ListItemText"
         {...ListItemTextStories.default.args}
         {...ListItemTextStories.Primary.args}
       />
@@ -107,10 +123,12 @@ export const Avatar: Story = {
   args: {
     children: [
       <ListItemAvatarStories.default.component
+        key="ListItemAvatar"
         {...ListItemAvatarStories.default.args}
         {...ListItemAvatarStories.Primary.args}
       />,
       <ListItemTextStories.default.component
+        key="ListItemText"
         {...ListItemTextStories.default.args}
         {...ListItemTextStories.Primary.args}
       />
@@ -122,14 +140,17 @@ export const ActionButton: Story = {
   args: {
     children: [
       <ListItemAvatarStories.default.component
+        key="ListItemAvatar"
         {...ListItemAvatarStories.default.args}
         {...ListItemAvatarStories.Primary.args}
       />,
       <ListItemTextStories.default.component
+        key="ListItemText"
         {...ListItemTextStories.default.args}
         {...ListItemTextStories.Primary.args}
       />,
       <ListItemActionStories.default.component
+        key="ListItemAction"
         {...ListItemActionStories.default.args}
         {...ListItemActionStories.Primary.args}
       />

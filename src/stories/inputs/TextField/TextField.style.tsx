@@ -1,5 +1,9 @@
-import { styled, TextField, InputLabel, FormHelperText, InputLabelProps } from "@mui/material";
+import { styled, TextField, InputLabel, FormHelperText, InputLabelProps, Theme } from "@mui/material";
 
+// Constant
+import { sizes } from "./TextField.constant";
+
+// Type
 import { TextFieldProps } from "./TextField.type";
 
 export const StyledRoot = styled("div")<{ fullWidth?: boolean }>(({ theme, fullWidth }) => ({
@@ -7,8 +11,17 @@ export const StyledRoot = styled("div")<{ fullWidth?: boolean }>(({ theme, fullW
   ...(fullWidth ? { width: "100%" } : {})
 }));
 
-export const StyledTextField = styled(TextField)<TextFieldProps & { bgColor: TextFieldProps["color"] }>(
-  ({ theme, color = "primary", bgColor = "inherit", size }) => ({
+export const StyledTextField = styled(TextField, { shouldForwardProp: propName => propName !== "bgColor" })(
+  ({
+    theme,
+    size = "md",
+    color = "primary",
+    bgColor = "primary"
+  }: TextFieldProps & {
+    theme: Theme;
+    bgColor: TextFieldProps["color"];
+    color: TextFieldProps["outlineColor"];
+  }) => ({
     borderRadius: "0.2em",
     backgroundColor: bgColor === "inherit" ? "inherit" : theme.palette[bgColor].main,
 
@@ -17,8 +30,9 @@ export const StyledTextField = styled(TextField)<TextFieldProps & { bgColor: Tex
     },
 
     "& input": {
+      color: "black",
       borderRadius: "0.2em",
-      padding: `${size == "small" ? 6.5 : 14.5}px 14px`,
+      padding: `${sizes[size]}px 14px`,
       border:
         bgColor === "inherit"
           ? `0.16em solid ${theme.palette[color].main}`
@@ -39,12 +53,12 @@ export const StyledInputLabel = styled(InputLabel)<InputLabelProps & { padding: 
   })
 );
 
-export const StyledTextFieldWithAdornment = styled("div")(({ theme }) => ({
+export const StyledTextFieldWithAdornment = styled("div")(({}) => ({
   display: "flex",
   alignItems: "center"
 }));
 
-export const StyledFormHelperText = styled(FormHelperText)(({ theme }) => ({
+export const StyledFormHelperText = styled(FormHelperText)(({}) => ({
   marginTop: "0.25em",
   paddingLeft: "0.15em"
 }));
