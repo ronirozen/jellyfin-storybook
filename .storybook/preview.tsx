@@ -9,8 +9,8 @@ import { themeProviderDecorators } from "../src/storybook-docs/style/theme";
 const preview: Preview = {
   parameters: {
     darkMode: {
-      dark: themes.dark,
-      light: themes.light
+      dark: { ...themes.dark, brandTitle: "Jellyfin UI", brandImage: "./assets/banner-light.png" },
+      light: { ...themes.light, brandTitle: "Jellyfin UI", brandImage: "./assets/banner-dark.png" }
     },
     backgrounds: { disable: true },
     docs: {

@@ -16,7 +16,11 @@ export const BaseButton = ({
   return loading && !disabled ? (
     <StyledBaseButton {...otherProps} color={color} variant={variant}>
       <StyledChildrenHidden>{children}</StyledChildrenHidden>
-      <StyledCircularProgress size={25} color={variant === "contained" ? "inherit" : color} />
+      <StyledCircularProgress
+        size={25}
+        aria-label="loading"
+        color={variant === "contained" ? "inherit" : color}
+      />
     </StyledBaseButton>
   ) : (
     <StyledBaseButton {...otherProps} color={color} disabled={disabled} variant={variant}>

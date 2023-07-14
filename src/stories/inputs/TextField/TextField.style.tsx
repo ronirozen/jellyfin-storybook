@@ -30,7 +30,6 @@ export const StyledTextField = styled(TextField, { shouldForwardProp: propName =
     },
 
     "& input": {
-      color: "black",
       borderRadius: "0.2em",
       padding: `${sizes[size]}px 14px`,
       border:

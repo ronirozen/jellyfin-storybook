@@ -1,4 +1,4 @@
-import type { FC, MouseEvent } from "react";
+import type { FC } from "react";
 import { StoryObj, Meta } from "@storybook/react";
 
 import { IconButton } from "./IconButton";
@@ -11,7 +11,7 @@ var meta: Meta<typeof IconButton> & { component: FC } = {
   tags: ["autodocs"],
   component: IconButton,
   title: "Navigation/IconButton",
-  args: { children: <Close />, onClick: (event: MouseEvent) => alert("Hi") }
+  args: { children: <Close />, onClick: () => alert("Hi") }
 };
 
 export default meta;
@@ -26,6 +26,12 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     color: "secondary"
+  }
+};
+
+export const Text: Story = {
+  args: {
+    color: "text"
   }
 };
 

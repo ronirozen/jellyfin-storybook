@@ -1,4 +1,4 @@
-import { FC, useState, lazy } from "react";
+import { FC, useState } from "react";
 import { StoryObj, Meta } from "@storybook/react";
 
 // Icons
@@ -102,7 +102,7 @@ const TextFieldWithButtonComponent = (props: TextFieldProps) => {
       EndAdornment={
         <IconButtonStories.default.component
           {...IconButtonStories.default.args}
-          {...IconButtonStories.Secondary.args}
+          {...IconButtonStories.Text.args}
           onClick={() => alert(value)}
         >
           <Search />
@@ -113,6 +113,5 @@ const TextFieldWithButtonComponent = (props: TextFieldProps) => {
 };
 
 export const TextFieldWithAdornmentButton = {
-  args: { ...Primary.args },
   render: (props: TextFieldProps) => <TextFieldWithButtonComponent {...props} />
 };

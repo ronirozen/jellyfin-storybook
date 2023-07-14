@@ -20,7 +20,7 @@ export const CardMedia = ({
       background={background}
       isMediaComponent={isMediaComponent}
       src={isMediaComponent ? image || src : undefined}
-      role={!isMediaComponent && image ? "img" : undefined}
+      {...(!isMediaComponent && image ? { role: "img", "aria-label": "card-media" } : {})}
       {...props}
     >
       {children}

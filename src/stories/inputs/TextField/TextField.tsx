@@ -42,6 +42,7 @@ export const TextField = ({
           variant="outlined"
           color={outlineColor}
           fullWidth={fullWidth}
+          inputProps={{ "aria-label": label?.toString() }}
           {...props}
           // @ts-ignore
           size={size}

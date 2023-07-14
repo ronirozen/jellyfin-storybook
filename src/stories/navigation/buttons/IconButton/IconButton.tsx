@@ -4,4 +4,6 @@ import { IconButtonProps } from "./IconButton.type";
 // Style
 import { StyledIconButton } from "./IconButton.style";
 
-export const IconButton = (props: IconButtonProps) => <StyledIconButton {...props} />;
+export const IconButton = (props: IconButtonProps) => (
+  <StyledIconButton {...props} aria-label="icon-button" />
+);

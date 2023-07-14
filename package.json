@@ -22,6 +22,7 @@
   "devDependencies": {
     "@mdx-js/react": "^2.3.0",
     "@mui/types": "^7.2.4",
+    "@storybook/addon-a11y": "^7.0.27",
     "@storybook/addon-docs": "^7.0.27",
     "@storybook/addon-essentials": "7.0.27",
     "@storybook/addon-interactions": "7.0.27",

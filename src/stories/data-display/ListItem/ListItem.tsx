@@ -9,7 +9,7 @@ export const ListItem = ({ children, disablePadding, divider }: ListItemProps) =
   return (
     <>
       <StyledListItem disablePadding={disablePadding}>{children}</StyledListItem>
-      {divider && <Divider />}
+      {divider && <Divider component="li" role="listitem" />}
     </>
   );
 };
