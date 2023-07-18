@@ -5,13 +5,13 @@ import { PropsWithChildren, DetailedHTMLProps, AnchorHTMLAttributes } from "reac
 import { Color } from "style";
 
 export type LinkProps = PropsWithChildren<
-  DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> & {
+  Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, "color"> & {
     /**
      * The color of the component.
      * [palette customization guide](?path=/story/style--color-palette).
-     * @default primary
+     * @default text
      */
-    color?: Color;
+    color?: Exclude<Color, "primary"> | "text";
     variant?: Variant;
     underline?: "none" | "hover" | "always";
   }
