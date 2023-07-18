@@ -1,4 +1,4 @@
-import { FC, lazy } from "react";
+import { FC } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 
 //  Icons
@@ -20,7 +20,7 @@ const meta: Meta<typeof ListItemAction> & { component: FC } = {
         color="text"
         hoverColor="info"
         {...IconButtonStories.default.args}
-        {...IconButtonStories.Primary.args}
+        {...IconButtonStories.Text.args}
       >
         <Delete />
       </IconButtonStories.default.component>
