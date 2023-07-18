@@ -17,21 +17,11 @@ var meta: Meta<typeof IconButton> & { component: FC } = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-  args: {
-    color: "primary"
-  }
-};
+export const Text: Story = {};
 
 export const Secondary: Story = {
   args: {
     color: "secondary"
-  }
-};
-
-export const Text: Story = {
-  args: {
-    color: "text"
   }
 };
 
