@@ -8,7 +8,7 @@ export type LinkProps = PropsWithChildren<
   Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, "color"> & {
     /**
      * The color of the component.
-     * [palette customization guide](?path=/story/style--color-palette).
+     * [palette customization guide](?path=/story/color-palette--color-palette).
      * @default text
      */
     color?: Exclude<Color, "primary"> | "text";

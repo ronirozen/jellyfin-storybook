@@ -1,16 +1,4 @@
-import { SyntaxHighlighter } from "@storybook/components";
 import { styled, ignoreSsrWarning } from "@storybook/theming";
-
-export const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme }) => ({
-  lineHeight: "19px",
-  borderRadius: theme.appBorderRadius,
-  fontSize: `${theme.typography.size.s2 - 1}px`,
-  boxShadow: theme.base === "light" ? "rgba(0, 0, 0, 0.10) 0 1px 3px 0" : "rgba(0, 0, 0, 0.20) 0 2px 5px 0",
-  "pre.prismjs": {
-    padding: 20,
-    background: "inherit"
-  }
-}));
 
 export const SourceSkeletonWrapper = styled.div(({ theme }) => ({
   margin: "25px 0 40px",

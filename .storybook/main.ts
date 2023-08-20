@@ -11,16 +11,23 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions"
   ],
+
   framework: {
     name: "@storybook/react-vite",
     options: {}
   },
+
   staticDirs: [
     {
       to: "/assets",
       from: "../assets"
     }
   ],
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.*"]
+
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.*"],
+
+  docs: {
+    autodocs: "tag"
+  }
 };
 export default config;

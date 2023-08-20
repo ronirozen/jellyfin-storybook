@@ -24,7 +24,7 @@ type Keys = Extract<keyof CheckboxPropsMui, (typeof keys)[number]>;
 export type CheckboxProps = { [K in Keys]?: CheckboxPropsMui[K] } & {
   /**
    * The color of the component.
-   * [palette customization guide](?path=/story/style--color-palette).
+   * [palette customization guide](?path=/story/color-palette--color-palette).
    * @default primary
    */
   color?: Color;

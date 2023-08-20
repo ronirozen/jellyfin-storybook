@@ -1,22 +1,23 @@
 import { FC, useContext } from "react";
 import { linkTo } from "@storybook/addon-links";
-import { useDarkMode } from "storybook-dark-mode";
 import { createElement } from "react-syntax-highlighter";
 import { DocsContext, SourceContext } from "@storybook/blocks";
-import { ThemeProvider, convert, themes } from "@storybook/theming";
 import { SyntaxHighlighterRendererProps } from "@storybook/components";
-
-// Constants
-import { ALL_STORIES } from "constants/stories";
 
 // Type
 import { SourceProps } from "./Source.type";
 
+// Constants
+import { ALL_STORIES } from "constants/stories";
+
 // Hooks
 import { useSourceProps } from "./Source.hooks";
 
+// Stories
+import { SyntaxHighlighter } from "../SyntaxHighlighter";
+
 // Style
-import { SourceSkeletonPlaceholder, SourceSkeletonWrapper, StyledSyntaxHighlighter } from "./Source.style";
+import { SourceSkeletonPlaceholder, SourceSkeletonWrapper } from "./Source.style";
 
 export const SourceSkeleton = () => (
   <SourceSkeletonWrapper>
@@ -86,23 +87,19 @@ export const StyledSource: FC<SourceProps> = ({
     return <SourceSkeleton />;
   }
 
-  const isDark = dark || useDarkMode();
-  const overrideTheme = isDark ? themes.dark : themes.light;
-
   return (
-    <ThemeProvider theme={convert(overrideTheme)}>
-      <StyledSyntaxHighlighter
-        bordered
-        copyable
-        format={format}
-        renderer={Renderer}
-        language={language || "tsx"}
-        className="docblock-source sb-unstyled"
-        {...rest}
-      >
-        {code}
-      </StyledSyntaxHighlighter>
-    </ThemeProvider>
+    <SyntaxHighlighter
+      bordered
+      copyable
+      dark={dark}
+      format={format}
+      renderer={Renderer}
+      language={language || "tsx"}
+      className="docblock-source sb-unstyled"
+      {...rest}
+    >
+      {code}
+    </SyntaxHighlighter>
   );
 };
 

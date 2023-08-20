@@ -18,7 +18,7 @@ export type CardProps = PropsWithChildren<{
   width: number | string;
   /**
    * The background color of the element.
-   * [palette customization guide](?path=/story/style--color-palette).
+   * [palette customization guide](?path=/story/color-palette--color-palette).
    * @default primary
    */
   bgColor?: Color;

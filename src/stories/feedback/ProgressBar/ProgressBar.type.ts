@@ -3,7 +3,7 @@ import { Color } from "style";
 export type ProgressBarProps = {
   /**
    * The color of the component.
-   * [palette customization guide](?path=/story/style--color-palette).
+   * [palette customization guide](?path=/story/color-palette--color-palette).
    * @default primary
    */
   color?: Color;

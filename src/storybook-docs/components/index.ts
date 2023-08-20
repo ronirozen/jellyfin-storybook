@@ -9,5 +9,6 @@ export * from "./Stories";
 export * from "./ColorItem";
 export * from "./ColorItems";
 export * from "./SideBySide";
+export * from "./SearchIcons";
 export * from "./ColorPalette";
 export * from "./DocsContainer";
